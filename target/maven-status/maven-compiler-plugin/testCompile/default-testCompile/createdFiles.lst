@@ -1,0 +1,4 @@
+com\orangehrmlive\demo\testbase\TestBase.class
+com\orangehrmlive\demo\testsuite\UsersTest.class
+com\orangehrmlive\demo\testsuite\LoginTest.class
+resources\testdata\TestData.class
