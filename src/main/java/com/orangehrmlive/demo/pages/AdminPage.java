@@ -30,14 +30,23 @@ public class AdminPage extends Utility {
     WebElement resultText;
     @FindBy(xpath = "//input[@id='ohrmList_chkSelectAll']")
     WebElement checkBox;
-    @FindBy(xpath = "//input[@id='btnDelete']")
+    @FindBy(id="btnDelete")
     WebElement deleteButton;
-    @FindBy(xpath = "//input[@id='dialogDeleteBtn']")
+    @FindBy(id= "dialogDeleteBtn")
     WebElement popUpOkButton;
     @FindBy(xpath = "//div[@class='head']")
     WebElement systemUser;
     @FindBy(xpath = "//td[text()='No Records Found']")
     WebElement noRecordFound;
+    public void clickOnCheckBox(){
+        clickOnElement(checkBox);
+    }
+    public void clickOnDelete(){
+       clickOnElement(deleteButton);
+    }
+    public void clickOnOkPopUP(){
+       // clickOnElement(popUpOkButton);
+    }
     public void verifyNoRecordFound(){
         String exp="No Records Found";
         verifyPage(exp,noRecordFound);

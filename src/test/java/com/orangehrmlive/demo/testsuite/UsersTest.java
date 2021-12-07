@@ -62,6 +62,8 @@ public void init(){
     @Test(groups = {"sanity","regression"})
     public void searchTheUserCreatedAndVerifyIt() throws InterruptedException {
 
+
+        adminShouldAddUserSuccessfully();
 /*
 Login to Application
 	click On "Admin" Tab
@@ -72,7 +74,7 @@ Login to Application
 	Click on "Search" Button
 	Verify the User should be in Result list.
 
- */loginPage.userShouldLoginSuccessfully();
+ *///loginPage.userShouldLoginSuccessfully();
         homePage.clickOnAdminTabOnHomePage();
         adminPage.verifySystemUserText();
         adminPage.enterUserName();
@@ -84,12 +86,22 @@ Login to Application
         adminPage.enterSearchButton();
 
 
-
-
-
     }
     @Test(groups = {"sanity","regression"})
-    public void verifyThatAdminShouldDeleteTheUserSuccessfully(){
+    public void verifyThatAdminShouldDeleteTheUserSuccessfully() throws InterruptedException {
+        adminShouldAddUserSuccessfully();
+        homePage.clickOnAdminTabOnHomePage();
+        adminPage.verifySystemUserText();
+        adminPage.enterUserName();
+        adminPage.enterUserRole();
+        Thread.sleep(2000);
+        adminPage.enterEmployeeName();
+        Thread.sleep(3000);
+        adminPage.selectStatus();
+        adminPage.enterSearchButton();
+        adminPage.clickOnCheckBox();
+        adminPage.clickOnDelete();
+        adminPage.clickOnOkPopUP();
 /*
 Login to Application
 	click On "Admin" Tab
